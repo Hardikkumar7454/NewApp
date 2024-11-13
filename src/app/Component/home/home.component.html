@@ -1,0 +1,18 @@
+<p>home works!</p>
+<h1><b>Hello Tickspot</b></h1>
+ <!-- <app-register [childMessage]="parentMessage"></app-register> -->
+
+    <app-register  (messageToParent)="receiveFromChild($event)"></app-register>
+ 
+<p>{{ messageFromChild }}</p> 
+<h1 appHighlight>The total is {{ totalCost }}</h1>
+<input type="text" [(ngModel)]="firstName" />
+
+
+<h2>Pick a highlight color</h2>
+<div>
+  <input type="radio" name="colors" (click)="color='lightgreen'">Green
+  <input type="radio" name="colors" (click)="color='yellow'">Yellow
+  <input type="radio" name="colors" (click)="color='cyan'">Cyan
+</div>
+<p [appHighlight]="color">Highlight me!</p>
